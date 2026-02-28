@@ -32,20 +32,56 @@
       }
 
     
-    .btn{
+    #createbtn{
         border-radius: 15px;
         background: #5090c5;
         }
+    #clearbtn{
+      border-radius: 15px;
+        background: #848789;
+    }
+
+    #profile{
+       display: block;
+            margin: auto;
+            padding: 100px;
+      
+      
+    }
   .form{
     border-radius:15px;
     margin: auto;
+    height: 500px;
     
   }
+
+  
+.footer {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		background-color: #0c0b0caa;
+		color: #ffffff;
+		text-align: center;
+    font-family: 'Rubik', sans-serif;
+		
+	}
+
+  #uploadpic{
+    background: #5090c5;
+    border-radius: 15px;
+  }
+  
 
   .form-select{
     border-radius:15px;
   }
   
+  #background{
+    height: 500px;
+    font-family: 'Rubik', sans-serif;
+  }
   table{
      background: #004B87;
   }
@@ -53,7 +89,9 @@
 
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href=""></a>
+        <a class="navbar-brand" href="Q3PROJECT_LOGOREAL.png">
+          <img src="Q3PROJECT_LOGOREAL.png" height="70" alt="readytoride">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -73,81 +111,88 @@
     </nav>
 
 
-     <div class="container bg-dark text-light min-vh-100 py-3 mt-3 rounded bg-opacity-75 h-500 w-100">
+     <div class="container bg-dark text-light min-vh-100 py-3 mt-3 rounded bg-opacity-75 h-500 w-100" id="background">
+     <div class="container">
     <div class="row">
+   <div class="container">
+        <div class="row">
+            <div class="col-sm-5" id="profile">
+                <img class="rounded-circle" src ="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg">
+                <br><br>
+                <form>
+                    <input type="file" class="form-control">
+                    <br>
+                    
+                    <div class="d-grid gap-3">
+                        <button type="button" class="btn btn-block" id="uploadpic" onclick="uploadpic()">Upload Photo</button>
+                    </div>
+                </form>
+            </div>
 
-    </div>
+            <div class="col-sm-7">
+                <h1><b>Registration Form</b></h1>
 
-		
-  <div class="container ">
-    <div class="row">
-    <div class="col-sm-6">
-
-
-    </div>
-
-   <div class="col-sm-6">
-    <p class="fw-bold display-4">Registration Form</p>
- <details class="ontoggle text-light">
-        <summary><u>Instructions:</u></summary>
+                <details class="ontoggle">
+  
+      <summary><u>Instructions:</u></summary>
         <p id="instructions"></p>
     </details>
+
     <br>
       <form>
         <div class="row">
            <div class="col">
             <label for="fname">First Name:</label>
-            <input type="fname" class="form-control" id="fname" placeholder="Enter First Name..." name="fname">
+            <input type="fname" class="form-control" id="fname" placeholder="Enter first name..." name="fname">
           </div>
 
 <br>
 </div>
-        <div class="container mt-3"> 
+        <div class="container mb-3"> 
               <form>
+   
          
           
               </div>
               <div class="row">
-              <div class="col-sm-9">
+                <div class="col-sm-2">
             
-                <label for="pwd">Gender:</label>
-                <select class="form-select" id="gender">
-                  <option>Male</option>
-                  <option>Female</option>
-                </select>
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" placeholder="Enter...">
+              </input>
                 
               </div>
-                <div class="col-sm-2">
-                <label for="age"></label>Age:</label>
-                <input type="age" class="form-control" id="age" name="age">
+                <div class="col-sm-10">
+                <label for="gender">Gender:</label>
+                <select class="form-select" id="gender">
+                <option>Male</option>
+                <option>Female</option>
+                </select>
             </div>
-            </div>
-    <br>
-
-             
-
+          </div>            
+<br>
 
     <form>
-    <div class="mb-3 mt-3">
+    <div class="mb-3">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      <input type="email" class="form-control" id="email" placeholder="Enter email..." name="email">
       </div>
     
       <div class="mb-3">
         <label for="pwd">Contact Number</label>
-        <input type="contact" class="form-control" id="contact" placeholder="0912-345-6789">
+        <input type="number" class="form-control" id="contact" placeholder="0912-345-6789">
       </div>
 <div class="mb-3">
         <label for="username">Enter username:</label>
-      <input type="username" class="form-control" id="username" placeholder="Enter username" name="username">
+      <input type="username" class="form-control" id="username" placeholder="Enter username..." name="username">
       </div>
   <div class="mb-3">
-       <label for="username">Enter password:</label>
-      <input type="username" class="form-control" id="username" placeholder="Enter username" name="username">
+       <label for="password">Enter password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password..." name="password">
       </div>
 
 
-    </form>
+   
      <div class="Other Information">
 
    
@@ -159,13 +204,35 @@
           </label>
         </div>
       <div class="text-center mt-4">
-  <button type="submit" class="btn btn-dark w-100">
-    Submit Form
+  <button type="submit" class="btn btn-dark w-100" id="createbtn">
+    Create my Account
   </button>
+  <br><br>
+  <button type="reset" class="btn w-100 text-dark" id="clearbtn">
+    Clear
+  </button>
+ </form>
 
-  <script>
-    document.getElementById('instructions').innerHTML = "Please fill out all required fields in the registration form with accurate information. Once completed, review your details and click Submit to finish your registration";
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function verify(){
+            document.getElementById("emailver").innerHTML = "Verify your email"; 
+          }
+          document.getElementById('instructions').innerHTML = "Please fill out all required fields in the registration form with accurate information. Once completed, review your details and click <b>Submit</b> to finish your registration";
+
+    </script>
+
+    <div class="footer">
+        <p>Group 4 | 9-Jade ©2026</p>
+    </div>
   </script>
+  </div>
+</div>
+</div>
 </div>
       </div>
     </form>
